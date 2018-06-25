@@ -12,11 +12,15 @@ import {NgProgressModule} from 'ngx-progressbar';
 import {AuthGuard} from './guards/auth/auth.guard';
 import {AuthedGuard} from './guards/authed/authed.guard';
 import {HomeComponent} from './home/home.component';
+import {LoginComponent} from './login/login.component';
+import {NotifyComponent} from './notify/notify.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    NotifyComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
 export const CONFIG = {
-    API_URL: 'https://restfulapi.test',
+    API_URL: 'http://restfulapi.test',
     app_name: 'Restful Front-End'
 };

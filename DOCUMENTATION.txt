@@ -1,0 +1,2 @@
+-- Fix node_modules/rxjs/Observable"' has no exporte d member 'Observable'.
+  npm install rxjs-compat --save

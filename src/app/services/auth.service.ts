@@ -5,6 +5,8 @@ import { Http } from '@angular/http';
 import { Router} from '@angular/router';
 import {UserData} from '../classes/UserData';
 import {NotifyService} from './notify.service';
+import {AuthToken} from '../classes/auth-token';
+import {User} from '../classes/user';
 
 @Injectable({
   providedIn: 'root'
@@ -51,8 +53,14 @@ export class AuthService {
       .toPromise()
       .then((response) => {
         console.log(response.json());
-        const token = response.json().auth;
-        const user = response.json().user.data;
+        // console.debug(response.json());
+        const token = new AuthToken(response.json().auth.expires_in,
+                                    response.json().auth.access_token,
+                                    response.json().auth.refresh_token) ;
+        const user = new User(response.json().user.id, response.json().user.name,
+                              response.json().user.email, response.json().user.admin);
+
+        console.log(token, user);
         // const
         return new UserData(token, user);
 

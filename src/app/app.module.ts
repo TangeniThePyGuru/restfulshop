@@ -14,13 +14,16 @@ import {AuthedGuard} from './guards/authed/authed.guard';
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 import {NotifyComponent} from './notify/notify.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    NotifyComponent
+    NotifyComponent,
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

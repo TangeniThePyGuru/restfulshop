@@ -21,15 +21,31 @@ export class AuthService {
 
   }
 
-  getAuthUser() {
+  static isAdmin(): boolean {
+    return JSON.parse(localStorage.getItem('user')).admin;
+  }
+
+  static getAuthUser() {
     return JSON.parse(localStorage.getItem('user'));
   }
 
-  getAuthUserId() {
+  static isLoggedIn(): boolean {
+    const token = localStorage.getItem('token');
+    const user =  localStorage.getItem('user');
+
+    // user is authenticated
+    if ( token && user ) {
+      return true;
+    }
+    // not authenticated
+    return false;
+  }
+
+  static getAuthUserId() {
     return JSON.parse(localStorage.getItem('user')).id;
   }
 
-  getToken(): string {
+  static getToken(): string {
     return localStorage.getItem('token');
   }
 
@@ -80,18 +96,6 @@ export class AuthService {
     this.notifyService.notify('Successfully logged in.', 'success');
 
     this.router.navigate(['dashboard']);
-  }
-
-  isLoggedIn(): boolean {
-    const token = localStorage.getItem('token');
-    const user =  localStorage.getItem('user');
-
-    // user is authenticated
-    if ( token && user ) {
-      return true;
-    }
-    // not authenticated
-    return false;
   }
 
   logout() {

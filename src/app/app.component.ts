@@ -12,11 +12,11 @@ export class AppComponent {
   public user;
 
   constructor(private authService: AuthService) {
-    this.user = AuthService.getAuthUser();
+    this.user = this.authService.getAuthUser();
   }
 
   isLoggedIn(): boolean {
-    return AuthService.isLoggedIn();
+    return this.authService.isLoggedIn();
   }
 
   logout() {

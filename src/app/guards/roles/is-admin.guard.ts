@@ -12,7 +12,7 @@ export class IsAdminGuard implements CanActivate {
   ) {}
 
   canActivate() {
-    if (!AuthService.isAdmin()) {
+    if (!this.authService.isAdmin()) {
       return true;
     }
   }

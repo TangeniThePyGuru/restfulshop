@@ -21,32 +21,33 @@ export class AuthService {
 
   }
 
-  static isAdmin(): boolean {
-    return JSON.parse(localStorage.getItem('user')).admin;
+  getToken(): AuthToken {
+    return JSON.parse(localStorage.getItem('token'));
   }
 
-  static getAuthUser() {
+  getAuthUser(): User {
     return JSON.parse(localStorage.getItem('user'));
   }
 
-  static isLoggedIn(): boolean {
-    const token = localStorage.getItem('token');
-    const user =  localStorage.getItem('user');
+  isAdmin(): boolean {
+    return this.getAuthUser().admin;
+  }
 
+  isLoggedIn(): boolean {
+    const token = this.getToken() ? this.getToken().access_token : null;
+    const user =  this.getAuthUser();
+    const expires_in = this.getToken() ? this.getToken().expires_in : null;
+    // console.log(expires_in);
     // user is authenticated
-    if ( token && user ) {
+    if ( token && user) {
       return true;
     }
     // not authenticated
     return false;
   }
 
-  static getAuthUserId() {
-    return JSON.parse(localStorage.getItem('user')).id;
-  }
-
-  static getToken(): string {
-    return localStorage.getItem('token');
+  getAuthUserId(): number {
+    return this.getAuthUser().id;
   }
 
   register(name: string, email: string, password: string): Promise<UserData> {
@@ -89,7 +90,7 @@ export class AuthService {
   }
 
   logUserIn(userData: UserData): void {
-    localStorage.setItem('token', userData.token.access_token);
+    localStorage.setItem('token', JSON.stringify(userData.token));
 
     localStorage.setItem('user', JSON.stringify(userData.user));
 

@@ -15,6 +15,9 @@ import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 import {NotifyComponent} from './notify/notify.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import { BuyersComponent } from './users/buyer/buyers/buyers.component';
+import { BuyerComponent } from './users/buyer/buyer/buyer.component';
+import {BuyerService} from './services/buyer.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     LoginComponent,
     NotifyComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    BuyersComponent,
+    BuyerComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     NgProgressModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard, AuthedGuard, NotifyService],
+  providers: [AuthService, AuthGuard, AuthedGuard, NotifyService, BuyerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

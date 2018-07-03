@@ -8,6 +8,7 @@ import {CONFIG} from '../config/config';
 })
 export class BuyerService {
   private headers: Headers;
+  private baseURL = `${CONFIG.API_URL}/buyers`;
 
   constructor(
     private authService: AuthService,
@@ -22,7 +23,7 @@ export class BuyerService {
     if (endPoint) {
       url  = endPoint;
     } else {
-      url = `${CONFIG.API_URL}/buyers`;
+      url = `${this.baseURL}}`;
     }
     const option = new RequestOptions({ headers: this.headers});
 
@@ -35,7 +36,7 @@ export class BuyerService {
   }
 
   getById(id: number): Promise<any> {
-    const url = `${CONFIG.API_URL}/buyers/${id}`;
+    const url = `${this.baseURL}/${id}`;
     const option = new RequestOptions({ headers: this.headers});
 
     return this.http.get(url, option )
@@ -47,7 +48,7 @@ export class BuyerService {
   }
 
   getBuyerTransactions(buyerId: number): Promise<any> {
-    const url = `${CONFIG.API_URL}/buyers/${buyerId}/transactions/`;
+    const url = `${this.baseURL}/${buyerId}/transactions/`;
     const option = new RequestOptions({ headers: this.headers});
 
     return this.http.get(url, option )
@@ -59,7 +60,7 @@ export class BuyerService {
   }
 
   getBuyerProducts(buyerId: number): Promise<any> {
-    const url = `${CONFIG.API_URL}/buyers/${buyerId}/products/`;
+    const url = `${this.baseURL}/${buyerId}/products/`;
     const option = new RequestOptions({ headers: this.headers});
 
     return this.http.get(url, option )
@@ -71,7 +72,7 @@ export class BuyerService {
   }
 
   getBuyerSellers(buyerId: number): Promise<any> {
-    const url = `${CONFIG.API_URL}/buyers/${buyerId}/sellers/`;
+    const url = `${this.baseURL}/${buyerId}/sellers/`;
     const option = new RequestOptions({ headers: this.headers});
 
     return this.http.get(url, option )
@@ -83,7 +84,7 @@ export class BuyerService {
   }
 
   getBuyerCategories(buyerId: number): Promise<any> {
-    const url = `${CONFIG.API_URL}/buyers/${buyerId}/categories`;
+    const url = `${this.baseURL}/${buyerId}/categories`;
     const option = new RequestOptions({ headers: this.headers});
 
     return this.http.get(url, option )

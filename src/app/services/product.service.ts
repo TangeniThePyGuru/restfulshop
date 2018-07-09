@@ -18,10 +18,10 @@ export class ProductService {
 
   /**
    *
-   * @param {any} endPoint
+   * @param {string} endPoint
    * @returns {Promise<any>}
    */
-  get(endPoint = null): Promise<any> {
+  get(endPoint: string = null): Promise<any> {
 
     let url ;
     if (endPoint) {

@@ -18,6 +18,11 @@ export class SellerService {
     this.headers = new Headers({'Authorization': `Bearer ${this.authService.getToken()}`});
   }
 
+  /**
+   *
+   * @param {any} endPoint
+   * @returns {Promise<any>}
+   */
   get(endPoint = null): Promise<any> {
 
     let url ;
@@ -36,6 +41,11 @@ export class SellerService {
 
   }
 
+  /**
+   *
+   * @param {number} sellerId
+   * @returns {Promise<any>}
+   */
   getById(sellerId: number): Promise<any> {
     const url = `${this.resourceBaseURL}/${sellerId}`;
     const option = new RequestOptions({ headers: this.headers});
@@ -48,6 +58,11 @@ export class SellerService {
       });
   }
 
+  /**
+   *
+   * @param {number} sellerId
+   * @returns {Promise<any>}
+   */
   getSellerTransactions(sellerId: number): Promise<any> {
     const url = `${this.resourceBaseURL}/${sellerId}/transactions/`;
     const option = new RequestOptions({ headers: this.headers});
@@ -60,6 +75,11 @@ export class SellerService {
       });
   }
 
+  /**
+   *
+   * @param {number} sellerId
+   * @returns {Promise<any>}
+   */
   getSellerBuyers(sellerId: number): Promise<any> {
     const url = `${this.resourceBaseURL}/${sellerId}/buyers/`;
     const option = new RequestOptions({ headers: this.headers});
@@ -72,6 +92,11 @@ export class SellerService {
       });
   }
 
+  /**
+   *
+   * @param {number} sellerId
+   * @returns {Promise<any>}
+   */
   getSellerCategories(sellerId: number): Promise<any> {
     const url = `${this.resourceBaseURL}/${sellerId}/categories`;
     const option = new RequestOptions({ headers: this.headers});
@@ -84,6 +109,11 @@ export class SellerService {
       });
   }
 
+  /**
+   *
+   * @param {number} sellerId
+   * @returns {Promise<any>}
+   */
   getSellerProducts(sellerId: number): Promise<any> {
     const url = `${this.resourceBaseURL}/${sellerId}/products/`;
     const option = new RequestOptions({ headers: this.headers});
@@ -96,6 +126,12 @@ export class SellerService {
       });
   }
 
+  /**
+   *
+   * @param {number} sellerId
+   * @param product
+   * @returns {Promise<any>}
+   */
   storeSellerProduct(sellerId: number, product: any ): Promise<any> {
     const url = `${this.resourceBaseURL}/${sellerId}/products/`;
     const option = new RequestOptions({ headers: this.headers});
@@ -108,6 +144,13 @@ export class SellerService {
       });
   }
 
+  /**
+   *
+   * @param {number} sellerId
+   * @param {number} productId
+   * @param product
+   * @returns {Promise<any>}
+   */
   updateSellerProduct(sellerId: number, productId: number, product: any ): Promise<any> {
     const url = `${this.resourceBaseURL}/${sellerId}/products/${productId}`;
     const option = new RequestOptions({ headers: this.headers});
@@ -120,6 +163,12 @@ export class SellerService {
       });
   }
 
+  /**
+   *
+   * @param {number} sellerId
+   * @param {number} productId
+   * @returns {Promise<any>}
+   */
   destroySellerProduct(sellerId: number, productId: number): Promise<any> {
     const url = `${this.resourceBaseURL}/${sellerId}/products/${productId}`;
     const option = new RequestOptions({ headers: this.headers});

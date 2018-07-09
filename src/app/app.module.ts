@@ -24,6 +24,9 @@ import {ProductService} from './services/product.service';
 import {CategoryService} from './services/category.service';
 import {TransactionService} from './services/transaction.service';
 import { PrettyDatePipe } from './pipes/pretty-date.pipe';
+import { SellersComponent } from './users/seller/sellers/sellers.component';
+import { SellerComponent } from './users/seller/seller/seller.component';
+import { UsersTemplateComponent } from './templates/users-template/users-template.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { PrettyDatePipe } from './pipes/pretty-date.pipe';
     HomeComponent,
     BuyersComponent,
     BuyerComponent,
-    PrettyDatePipe
+    PrettyDatePipe,
+    SellersComponent,
+    SellerComponent,
+    UsersTemplateComponent
   ],
   imports: [
     BrowserModule,

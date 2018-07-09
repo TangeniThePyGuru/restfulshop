@@ -7,7 +7,7 @@ import {CONFIG} from '../config/config';
   providedIn: 'root'
 })
 export class BuyerService {
-  private headers: Headers;
+  private readonly headers: Headers;
   private resourceBaseURL = `${CONFIG.API_URL}/buyers`;
 
   constructor(

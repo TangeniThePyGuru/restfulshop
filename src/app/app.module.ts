@@ -18,6 +18,12 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import { BuyersComponent } from './users/buyer/buyers/buyers.component';
 import { BuyerComponent } from './users/buyer/buyer/buyer.component';
 import {BuyerService} from './services/buyer.service';
+import {UserService} from './services/user.service';
+import {SellerService} from './services/seller.service';
+import {ProductService} from './services/product.service';
+import {CategoryService} from './services/category.service';
+import {TransactionService} from './services/transaction.service';
+import { PrettyDatePipe } from './pipes/pretty-date.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,8 @@ import {BuyerService} from './services/buyer.service';
     DashboardComponent,
     HomeComponent,
     BuyersComponent,
-    BuyerComponent
+    BuyerComponent,
+    PrettyDatePipe
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,18 @@ import {BuyerService} from './services/buyer.service';
     NgProgressModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard, AuthedGuard, NotifyService, BuyerService],
+  providers: [
+    AuthService,
+    AuthGuard,
+    AuthedGuard,
+    NotifyService,
+    BuyerService,
+    UserService,
+    SellerService,
+    ProductService,
+    CategoryService,
+    TransactionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

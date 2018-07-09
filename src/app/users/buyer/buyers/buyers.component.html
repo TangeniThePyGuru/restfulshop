@@ -1,3 +1,11 @@
-<p>
-  buyers works!
-</p>
+<div *ngIf="!isLoading">
+  <div *ngFor="let buyer of buyers">
+    <app-buyer
+      [buyer]="buyer"
+      (jokeDeleted)="buyerDeleted($event)"></app-buyer>
+  </div>
+</div>
+
+<div *ngIf="isLoading" class="text-center">
+  LOADING..
+</div>

@@ -22,7 +22,7 @@ export class CategoryService {
     if (endPoint) {
       url  = endPoint;
     } else {
-      url = `${this.resourceBaseURL}}`;
+      url = `${this.resourceBaseURL}`;
     }
     const option = new RequestOptions({ headers: this.headers});
 

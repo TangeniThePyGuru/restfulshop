@@ -1,0 +1,32 @@
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <p class="text-center"> {{user.name}}'s profile</p>
+    </div>
+    <div class="panel-body">
+      <div class="text-center">
+        <img style="border-radius: 50%" width="140px" height="140px" alt="">
+        <!--<img [email]="user.email" gravatar [size]="100" style="border-radius: 50%" width="140px" height="140px" alt="">-->
+
+      </div>
+      <br>
+      <!--<p class="text-center">-->
+        <!--Joined Date: {{ Date.now() | prettyDate }}-->
+      <!--</p>-->
+      <br>
+      <p class="text-center">
+        <!--<a class="btn btn-info" *ngIf="isAuthUserProfile()" routerLink="edit">Edit your profile</a>-->
+      </p>
+    </div>
+  </div>
+</div>
+<div class="col-md-8">
+  <div class="row">
+    <ul class="nav navbar-nav" *ngIf="isLoggedIn()">
+      <li><a [routerLink]="['/users/buyers']">Buyers</a></li>
+      <li><a [routerLink]="['/users/sellers']">Sellers</a></li>
+      <!--<li><a [routerLink]="['user/profile', user.id]" >My Profile</a></li>-->
+    </ul>
+  </div>
+  <router-outlet></router-outlet>
+</div>

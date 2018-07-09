@@ -13,7 +13,7 @@ export class CategoryService {
   constructor(private authService: AuthService,
               private http: Http,
   ) {
-    this.headers = new Headers({'Authorization': `Bearer ${this.authService.getToken()}`});
+    this.headers = new Headers({'Authorization': `Bearer ${this.authService.getToken().access_token}`});
   }
 
   get(endPoint = null): Promise<any> {

@@ -13,7 +13,7 @@ export class ProductService {
   constructor(private authService: AuthService,
               private http: Http,
   ) {
-    this.headers = new Headers({'Authorization': `Bearer ${this.authService.getToken()}`});
+    this.headers = new Headers({'Authorization': `Bearer ${this.authService.getToken().access_token}`});
   }
 
   /**

@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span> {{ transaction.name }}</span>
+
+    <!--<span >-->
+    <!--<input class="form-control" type="text" [formControl]="title">-->
+    <!--</span>-->
+    <!--<span class="pull-right">-->
+    <!--<a [routerLink]="['/user/profile', joke.user.id]">{{ joke.user.name }}</a>-->
+    <!--</span>-->
+  </div>
+
+  <div class="panel-body">
+    <p class="text-center">
+      asdasdad asdada asdad adasd asasdad a as das asda sda asd a sd ad
+    </p>
+
+    <!--<p class="text-center" >-->
+    <!--<textarea class="form-control" name="joke" id="joke" cols="30" rows="10" [formControl]="content"></textarea>-->
+    <!--</p>-->
+
+  </div>
+
+  <div class="panel-footer">
+    {{ transaction.creationDate | prettyDate }}
+    <span>
+      <!--*ngIf="canModify() && !editing"-->
+      <!--&gt;-->
+          <button class="btn btn-danger btn-xs pull-right" (click)="delete()" >Delete</button>
+          <button class="btn btn-info btn-xs pull-right" (click)="edit()">Edit</button>
+      </span>
+    <span >
+          <button class="btn btn-default btn-xs pull-right"
+                  (click)="cancel()">
+              Cancel</button>
+          <button class="btn btn-primary btn-xs pull-right">
+                  <!--(click)="updateJoke()"-->
+            <!--[disabled]="title.invalid || content.invalid"-->
+            <!--&gt;-->
+              Save Changes</button>
+      </span>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div *ngIf="!isLoading">
+  <div *ngFor="let transaction of transactions">
+    <app-transaction
+      [transaction]="transaction"
+      (transactionDeleted)="transactionDeleted($event)"></app-transaction>
+  </div>
+</div>
+
+<div *ngIf="isLoading" class="text-center">
+  LOADING..
+</div>

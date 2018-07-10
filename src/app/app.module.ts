@@ -32,6 +32,9 @@ import { ProductsComponent } from './products/products/products.component';
 import { TransactionComponent } from './transactions/transaction/transaction.component';
 import { TransactionsComponent } from './transactions/transactions/transactions.component';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
+import { LeftNavComponent } from './navigation/left-nav/left-nav.component';
+import { TopBarComponent } from './navigation/top-bar/top-bar.component';
+import { ProfileComponent } from './profile/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,10 @@ import { EditProfileComponent } from './profile/edit-profile/edit-profile.compon
     ProductsComponent,
     TransactionComponent,
     TransactionsComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    LeftNavComponent,
+    TopBarComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

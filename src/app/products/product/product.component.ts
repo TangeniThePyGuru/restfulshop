@@ -8,6 +8,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class ProductComponent implements OnInit {
   @Input() product;
   @Output() productDeleted = new EventEmitter();
+  editing = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -18,11 +20,11 @@ export class ProductComponent implements OnInit {
   }
 
   edit() {
-
+    this.editing = true;
   }
 
   cancel() {
-
+    this.editing = false;
   }
 
 }

@@ -18,7 +18,7 @@ export class BuyerComponent implements OnInit {
   }
 
   delete() {
-    this.buyerService.delete(this.buyer.id);
+    this.buyerService.delete(this.buyer.identifier);
   }
 
   edit() {

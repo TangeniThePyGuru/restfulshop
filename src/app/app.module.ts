@@ -27,6 +27,11 @@ import { PrettyDatePipe } from './pipes/pretty-date.pipe';
 import { SellersComponent } from './users/seller/sellers/sellers.component';
 import { SellerComponent } from './users/seller/seller/seller.component';
 import { UsersTemplateComponent } from './templates/users-template/users-template.component';
+import { ProductComponent } from './products/product/product.component';
+import { ProductsComponent } from './products/products/products.component';
+import { TransactionComponent } from './transactions/transaction/transaction.component';
+import { TransactionsComponent } from './transactions/transactions/transactions.component';
+import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,12 @@ import { UsersTemplateComponent } from './templates/users-template/users-templat
     PrettyDatePipe,
     SellersComponent,
     SellerComponent,
-    UsersTemplateComponent
+    UsersTemplateComponent,
+    ProductComponent,
+    ProductsComponent,
+    TransactionComponent,
+    TransactionsComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

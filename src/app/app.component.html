@@ -10,16 +10,26 @@
       <ul class="nav navbar-nav" *ngIf="isLoggedIn()">
         <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
         <li><a [routerLink]="['/users']">Users</a></li>
+        <li><a [routerLink]="['/products']">Products</a></li>
+        <li><a [routerLink]="['/transactions']">Transactions</a></li>
         <!--<li><a [routerLink]="['user/profile', user.id]" >My Profile</a></li>-->
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="!isLoggedIn()"><a routerLink="/auth/login">Login</a> </li>
         <!--<li *ngIf="!isLoggedIn()"><a routerLink="/auth/register">Register</a> </li>-->
-        <li class="dropdown">
+        <!--<li class="dropdown">-->
 
-          <a class="dropdown-toggle" role="button" *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
+          <!---->
+        <!--</li>-->
 
+        <li *ngIf="isLoggedIn()" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
+          <div class="dropdown-menu text-center">
+            <a routerLink="/users/edit">Edit Profile </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
+          </div>
         </li>
       </ul>
     </div>

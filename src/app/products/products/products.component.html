@@ -1,0 +1,11 @@
+<div *ngIf="!isLoading">
+  <div *ngFor="let product of products">
+    <app-product
+      [product]="product"
+      (productDeleted)="productDeleted($event)"></app-product>
+  </div>
+</div>
+
+<div *ngIf="isLoading" class="text-center">
+  LOADING..
+</div>

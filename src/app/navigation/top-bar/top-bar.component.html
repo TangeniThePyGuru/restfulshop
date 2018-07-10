@@ -16,21 +16,31 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="!isLoggedIn()"><a routerLink="/auth/login">Login</a> </li>
-        <!--<li *ngIf="!isLoggedIn()"><a routerLink="/auth/register">Register</a> </li>-->
-        <!--<li class="dropdown">-->
 
-        <!---->
+        <!--<li *ngIf="isLoggedIn()" class="nav-item dropdown">-->
+          <!--<a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>-->
+          <!--<div class="dropdown-menu text-center" aria-labelledby="dropdownMenu1">-->
+            <!--<a routerLink="/users/edit">Edit Profile </a>-->
+            <!--<div class="dropdown-divider"></div>-->
+            <!--<a (click)="logout()">Logout</a>-->
+          <!--</div>-->
         <!--</li>-->
 
-        <li *ngIf="isLoggedIn()" class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
-          <div class="dropdown-menu text-center">
-            <a routerLink="/users/edit">Edit Profile </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
-          </div>
-        </li>
+        <div class="dropdown" *ngIf="isLoggedIn()">
+          <a style="margin-top: 5px" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Profile
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a routerLink="/users/edit">Edit Profile </a></li>
+            <li role="separator" class="divider"></li>
+            <li><a (click)="logout()">Logout</a></li>
+          </ul>
+        </div>
+
       </ul>
+
+
     </div>
   </div>
 </nav>

@@ -1,47 +1,15 @@
 <ng-progress></ng-progress>
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" [routerLink]="['']">
-        {{title}}
-      </a>
-    </div>
-    <div>
-      <ul class="nav navbar-nav" *ngIf="isLoggedIn()">
-        <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
-        <li><a [routerLink]="['/users']">Users</a></li>
-        <li><a [routerLink]="['/products']">Products</a></li>
-        <li><a [routerLink]="['/transactions']">Transactions</a></li>
-        <!--<li><a [routerLink]="['user/profile', user.id]" >My Profile</a></li>-->
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="!isLoggedIn()"><a routerLink="/auth/login">Login</a> </li>
-        <!--<li *ngIf="!isLoggedIn()"><a routerLink="/auth/register">Register</a> </li>-->
-        <!--<li class="dropdown">-->
-
-          <!---->
-        <!--</li>-->
-
-        <li *ngIf="isLoggedIn()" class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
-          <div class="dropdown-menu text-center">
-            <a routerLink="/users/edit">Edit Profile </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+<app-top-bar></app-top-bar>
 <div class="container">
 
   <!--notify-->
 
   <app-notify></app-notify>
-
+  <div class="col-md-4" *ngIf="isLoggedIn()">
+    <app-left-nav></app-left-nav>
+  </div>
   <!-- The outlet for the different components -->
-  <router-outlet></router-outlet>
+  <div class="col-md-8">
+    <router-outlet></router-outlet>
+  </div>
 </div>
